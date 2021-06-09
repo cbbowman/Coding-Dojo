@@ -1,0 +1,108 @@
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code
+$ mkdir basic_repo
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code
+$ cd basic_repo/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo
+$ git init
+Initialized empty Git repository in C:/Users/cbowman/code/basic_repo/.git/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ touch file1.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ touch file2.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ nano file1.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ nano file2.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git add .
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in file2.txt.
+The file will have its original line endings in your working directory
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git commit -m "adding file1 and file2"
+[master (root-commit) accfdc9] adding file1 and file2
+ Committer: Charles Bowman <cbowman@hcps.us>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+)
+ create mode 100644 file1.txt
+ create mode 100644 file2.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git remote add origin https://github.com/cbbowman/basic_repo
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 275 bytes | 91.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cbbowman/basic_repo
+ * [new branch]      master -> master
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ ls
+file1.txt  file2.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ nano file1.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ nano file2.txt
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git add .
+warning: LF will be replaced by CRLF in file1.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in file2.txt.
+The file will have its original line endings in your working directory
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git commit -m "changed file1 and file2"
+[master 074e2ff] changed file1 and file2
+ Committer: Charles Bowman <cbowman@hcps.us>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/basic_repo (master)
+$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 333 bytes | 333.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cbbowman/basic_repo
+   accfdc9..074e2ff  master -> master

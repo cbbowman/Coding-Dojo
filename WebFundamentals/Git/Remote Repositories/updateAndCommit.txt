@@ -1,0 +1,94 @@
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code
+$ mkdir git_demo
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code
+$ cd git_demo/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo
+$ git init
+Initialized empty Git repository in C:/Users/cbowman/code/git_demo/.git/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ git remote add origin https://github.com/cbbowman/git_demo
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ git pull
+remote: Enumerating objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3
+Unpacking objects: 100% (3/3), 452 bytes | 32.00 KiB/s, done.
+From https://github.com/cbbowman/git_demo
+ * [new branch]      master     -> origin/master
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ ls
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ git clong https://github.com/cbbowman/git_demo
+git: 'clong' is not a git command. See 'git --help'.
+
+The most similar command is
+        clone
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ git clone https://github.com/cbbowman/git_demo
+Cloning into 'git_demo'...
+remote: Enumerating objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 3
+Receiving objects: 100% (3/3), done.
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ ls
+git_demo/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo (master)
+$ cd git_demo/
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo/git_demo (master)
+$ ls
+demo_index.html
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo/git_demo (master)
+$ nano demo_index.html
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo/git_demo (master)
+$ git add demo_index.html
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo/git_demo (master)
+$ git commit -m "made changes"
+[master 64cd0bf] made changes
+ Committer: Charles Bowman <cbowman@hcps.us>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+cbowman@TS-CBOWMAN MINGW64 /c/Users/cbowman/code/git_demo/git_demo (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 312 bytes | 312.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/cbbowman/git_demo
+   199a72c..64cd0bf  master -> master
