@@ -1,0 +1,35 @@
+.nav {
+    background-color: #6495ed;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+}
+img {
+    flex: 1;
+    height: 100px;
+    width: 100%;
+    object-fit: scale-down;
+    align-self: center;
+}
+.nav, h1 {
+    color: white;
+    flex: 2;
+    text-align: center;
+    padding: 10px;
+}
+.nav, ul {
+    flex: 5;
+    display: flex;
+    list-style-type: none;
+    color: white;
+    justify-content: space-around;
+    text-align: center;
+    padding: 25px;
+}
+.nav, a {
+    text-decoration: none;
+    color: white;
+}
+.nav, li {    
+    text-align: center;
+}
