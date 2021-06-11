@@ -10,11 +10,14 @@
 #header {
     display: flex;
     width: 100%;
+    height: 15vh;
+    align-items: center;
+    justify-content: space-around;
 }
 
 #name {
     display: inline-block;
-    font-size: x-large;
+    font-size: large;
     font-family: cursive;
     padding: 25px;
     flex: 1;
@@ -22,67 +25,94 @@
 
 #tagline {
     display: inline-block;
-    font-size: xx-large;
+    font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 35px;
     font-weight: bold;
     flex: 1;
-    float: right;
+    text-align: right;
 }
 
 #content {
-    background-image: linear-gradient(#1b0b0f, #6f5964, #1b0b0f);
-    display: inline-block;
-    height: 1000px;
-    width: 100%;
+    background-color: plum;
+    height: 70vh;
 }
 #row-1 {
-    display: flex;
-    justify-content: space-around;
+    display: block;
+    height: 300px;
+    background-color: blue; 
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #portrait {
-    background-color: #c0c0c0;
     display: inline-block;
-    padding: 5px;
-    margin: 25px;
-    height: 400px;
-    width: 600px;
+    background-color: green;
+    vertical-align: top;
+    margin-right: 25px;
+    height: 100%;
 }
 
-#portrait>img {    
-    height: 400px;
-    width: 600px;
+#portrait>img {   
+    height: 100%;
+    width: auto;
 }
 
 #intro {
     display: inline-block;
-    width: 700px;
-    margin: 25px;
+    background-color: red;
     vertical-align: top;
-    height: 410px;
-    background-image: linear-gradient(to right, #fefefe, #dacbd9);
-}
-#title {
-    background-image: linear-gradient(#b2b1b5, #878593, #b2b1b5);
-    color: white;
-    font-family: sans-serif;
-    font-weight: bolder;
-    padding: 20px;
+    width: 600px;
+    height: 100%;
+    padding: 10px;
+    margin-bottom: 25px;
+
 }
 
-#body {
-    padding: 15px;
+.body {
+
+
 }
 
-#body>p {
-    font-size: x-large;
+.body>p {
 }
 
 #row-2 {
+    min-height: 45vh;
+    background-color: yellow; 
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.column {
+    display: inline-block;
+
+}
+
+.title {
+
+}
+
+.pic {
+}
+
+.item-text {
+
+}
+
+.icons {
+
+}
+
+.button {
 
 }
 
 #footer {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
