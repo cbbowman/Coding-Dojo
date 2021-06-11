@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;
+    outline: 1px dotted red;
 }
 #wrapper {
     display: inline-block;
@@ -60,6 +61,7 @@
 #content ul {
     padding-left: 30px;
 }
+
 #footer {
     background-color: #5d6673;
     display: flex;
