@@ -3,14 +3,14 @@
     padding: 0px;
 }
 #wrapper {
-    display: block;
+    display: inline-block;
     background-color: #1b335d;
     padding: 10px;
     width: 970px;
 }
 #header {
     background-color: #cf3036;
-    display: block;
+    display: inline-block;
     border-radius: 10px;
     color: #c2d6ec;
     font-size: 24pt;
@@ -27,7 +27,7 @@
 #menu {
     background-color: #2a7d8c;
     flex: 1;
-    display: block;
+    display: inline-block;
     border-radius: 15px;
     padding: 20px;
     margin-right: 10px;
