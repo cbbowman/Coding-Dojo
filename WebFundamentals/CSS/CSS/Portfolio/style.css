@@ -19,7 +19,7 @@
 }
 
 #row1 {
-    height: 30vh;
+    height: auto;
 }
 
 #row2 {
@@ -64,8 +64,8 @@
 }
 
 #portrait>img {   
-    height: 95%;
-    width: auto;
+    height: auto;
+    width: 100%;
     border: #c0c0c0;
     border-width: 5px;
     border-style: solid;
