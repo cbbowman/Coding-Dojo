@@ -86,6 +86,7 @@
 
 .description {
     padding: 15px;
+    height: 30vh;
 }
 .description>p {
     font-family: sans-serif;
