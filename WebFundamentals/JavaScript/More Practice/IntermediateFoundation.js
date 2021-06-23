@@ -48,3 +48,25 @@ function nthToLast(array, n){
     }
     return array[array.length-n];
 }
+
+function secondLargest(array){
+    if(array.length<2){
+        console.log("array is too short");
+        return("error");
+    }
+    var largest=0;
+    var secondLargest=0;
+
+    for(var i=1;i<array.length;i++){
+        if(array[i]>largest){
+            secondLargest=largest;
+            largest=array[i];
+        }
+        else{
+            if(array[i]>secondLargest){
+                secondLargest=array[i];
+            }
+        }
+    }
+    return secondLargest;
+}
