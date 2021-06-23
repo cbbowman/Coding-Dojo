@@ -70,3 +70,12 @@ function secondLargest(array){
     }
     return secondLargest;
 }
+
+function double(array){
+    var output=[];
+    for(var i=0;i<array.length;i++){
+        output.push(array[i]);
+        output.push(array[i]);
+    }
+    return output;
+}
