@@ -40,3 +40,11 @@ function secondToLast(array){
     }
     return array[array.length-2];
 }
+
+function nthToLast(array, n){
+    if(array.length<n){
+        console.log("array is too short");
+        return("error");
+    }
+    return array[array.length-n];
+}
