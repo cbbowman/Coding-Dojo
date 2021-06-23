@@ -33,4 +33,10 @@ function fib(num){
     return fib(num-2)+fib(num-1);
 }
 
-console.log(fib(5));
+function secondToLast(array){
+    if(array.length<2){
+        console.log("array is too short");
+        return("error");
+    }
+    return array[array.length-2];
+}
