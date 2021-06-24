@@ -8,38 +8,40 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: baseline ;
+    height: 10vh;
 }
 
 .headerImage {
-    width: 25vw;
+    height: 10vh;
 }
 
 main {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    margin-top: 5vh;
 }
 
 .row {
-    margin: 5%;
+    margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .image {
     height: 10vw;
     width: 10vw;
+    margin: 0.5vw;
 }
 
 .image img {
-    border-width: thick;
+    border-width: 0.25em;
     border-color: black;
     border-style: solid;
-    height: 100%;
-    width: 100%;
-    padding:25%;
-    margin: 15%;
+    height: 80%;
+    width: 80%;
+    padding:10%;
 }
 
 .blueImage {
@@ -51,7 +53,7 @@ main {
 }
 
 .redImage {
-    background-color: red;
+    background-color: #f36870;
 }
 
 body {
