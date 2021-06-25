@@ -1,0 +1,201 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border-style: dashed;
+    border-color: red;
+    border-width: thin;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    width: 970px;
+    background-color: #245076;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    height: 15vh;
+    padding: 1em;
+}
+
+header>img {
+    height: 100%;
+}
+
+.cornerMenu {
+    text-align: center;;
+}
+
+.cornerMenu>p {
+    display: inline-block;
+}
+.cornerMenu>a {
+    display: inline-block;
+    color: #ccae00;
+}
+
+.searchBox {
+    margin-top: 0.5em;
+    background-color: #444444;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1vw 3vw 1vw 3vw;
+    border-radius: 0.5em;
+}
+
+.searchInputBox {
+    background-color: white;
+    color: darkgrey;
+    margin-right: 1em;
+    padding: 0.25em 3em 0.25em 3em;
+}
+
+.searchButton {
+    background-color: #245076;
+    padding: 0.25em 1em 0.25em 1em;
+    border-radius: 0.25em;
+    color: white;
+    border-color: white;
+    border-width: thin;
+    border-style: solid;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+nav>ul {
+    background-color: #427cad;
+    border-radius: 0.25em;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    width: min-content;
+    padding: 0em 1em;
+}
+
+nav li {
+    margin: 0.5em 1em;
+    color: white;
+    font-size: larger;
+}
+
+main {
+
+}
+
+.links {
+    text-decoration: underline;
+    color: white;
+    margin-top: 2em;
+    list-style: none;
+    width: 25%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.links>li {
+    padding: 0.25em 0em;
+}
+
+.yellowText {
+    color: yellow;
+}
+
+.description {
+    display: inline-block;
+    width: 70%;
+}
+
+.intro {
+    display: block;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 1em;
+    width: 100%;
+}
+
+.mainPoints {
+    width: 100%;
+    display: block;
+    color: yellow;
+    font-size: large;
+    text-align: center;
+    font-style: italic;
+    margin-top: 0.5em;
+}
+
+.finalPoint {
+    width: 100%;
+    display: block;
+    color: white;
+    font-size: large;
+    text-align: center;
+    margin-top: 0.5em;
+}
+
+.subSections {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.subSections>section {
+    width: 45%;
+    margin: 1em;
+    border-top: #427cad;
+    border-top-style: solid;
+    border-top-width: thick;
+}
+
+.subSections h2 {
+    text-align: center;
+}
+
+.subSections p {
+    text-align: center;
+}
+
+.subSections ul {
+    list-style-position: outside;
+    list-style: square;
+    padding-left: 1em;
+    text-align: left;
+}
+
+.subSections li {
+    color: #427cad;
+}
+
+section * {
+    padding: 0.25em;
+}
+
+footer {
+    background-image: linear-gradient(to bottom,#245076,#3274ac);
+    color: #86b8e4;
+    font-size: small;
+    text-align: center;
+    padding: 1em;
+}
+
+footer a {
+    color: #86b8e4;
+    font-size: large;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 0.5em;
+}
