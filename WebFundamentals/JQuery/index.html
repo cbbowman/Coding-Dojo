@@ -21,6 +21,18 @@
             $('#fadeInOut').click(function(){
                 $('#imgFadeInOut').fadeToggle("slow","linear");
             });
+            $('#buttonBefore').click(function(){
+                $('#beforeOrAfter').before('<p>This paragraph is before!</p>');
+            });
+            $('#buttonAfter').click(function(){
+                $('#beforeOrAfter').after('<p>This paragraph is after!</p>');
+            });
+            $('#htmlButton').click(function(){
+                $('#htmlParagraph').html('<p>NEW TEXT!</p>');
+            });
+            $('#srcAttr').click(function(){
+                $('#imgSrcAttr').attr("src","./hiddenImage.webp");
+            });
         });
     </script>
     <body>
@@ -36,18 +48,23 @@
                 <p>Click the button to slidetoggle a hidden image</p>
                 <img id="imgSlideToggle" src="./hiddenImage.webp" alt="alt text">
             <h2>Append</h2>
-            <button id="appendParagraph">Append</button>
-            <p id="pAppendParagraph">Click the button to append a new paragraph!</p>
+                <button id="appendParagraph">Append</button>
+                <p id="pAppendParagraph">Click the button to append a new paragraph!</p>
             <h2>Fade Out and In</h2>
-            <button id="fadeInOut">Fade In and Out</button>
-            <p>Click the button to fade in and out a hidden image</p>
-            <img id="imgFadeInOut" src="./hiddenImage.webp" alt="alt text">
+                <button id="fadeInOut">Fade In/Out</button>
+                <p>Click the button to fade in and out a hidden image</p>
+                <img id="imgFadeInOut" src="./hiddenImage.webp" alt="alt text">
             <h2>Before and After</h2>
-            <button id="Before">Append</button>
-            <button id="After">Append</button>
-            <p id="beforeOrAfter">Click the buttons to insert text before or after this paragraph!</p>
+                <button id="buttonBefore">Append</button>
+                <button id="buttonAfter">Append</button>
+                <p id="beforeOrAfter">Click the buttons to insert text before or after this paragraph!</p>
             <h2>Html</h2>
+                <button id="htmlButton">HTML</button>
+                <p id="htmlParagraph">Click the button to replace the html of this paragraph with 'NEW TEXT'</p>
             <h2>Attr</h2>
+                <button id="srcAttr">Attr</button>
+                <p>Click the button to change the 'src' attribute of the imgage!</p>
+                <img id="imgSrcAttr" src="./dwarf-intro.png" alt="alt text">
             <h2>Val</h2>
             <h2>Text</h2>
         </main>
