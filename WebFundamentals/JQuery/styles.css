@@ -27,6 +27,7 @@ h2 {
 button {
     padding: 1em;
     width: 10vw;
+    margin: 1em;
 }
 
 .redText {
