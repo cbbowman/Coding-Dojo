@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Disappearing Vegetables</title>
+        <meta charset="UTF-8"> 
+        <meta name="author" content="Charlie Bowman">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>jQuery - Disappearing Vegetables</h1>
+            <button>Restore</button>
+        </header>
+        <main>
+            <img src="./images/bokchoy.jpg" alt="bok choy">
+            <img src="./images/cabbage.jpg" alt="cabbage">
+            <img src="./images/carrot.jpg" alt="carrot">
+            <img src="./images/chard.jpg" alt="swiss chard">
+            <img src="./images/kohlrabi.jpg" alt="kohlrabi">
+            <img src="./images/lima.jpg" alt="lima beans">
+            <img src="./images/mizuna.jpg" alt="mizuna">
+            <img src="./images/mustard.jpg" alt="mustard greens">
+            <img src="./images/turnip.jpg" alt="turnips">
+        </main>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script text="text/javascript">
+        $(document).ready(function(){
+            $('img').click(function(){
+                $(this).hide();
+            })
+            $('header>button').click(function(){
+                $('img').show();
+            })
+        });
+    </script>
+</html>
