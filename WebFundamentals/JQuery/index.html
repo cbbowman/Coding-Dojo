@@ -33,6 +33,12 @@
             $('#srcAttr').click(function(){
                 $('#imgSrcAttr').attr("src","./hiddenImage.webp");
             });
+            $('#valButton').click(function(){
+                $('#valText').after('<p>'+$('#valText').val()+'</p>');
+            });
+            $('#textButton').click(function(){
+                $('#pText').after('<p>'+$('main').text()+'</p>');
+            });
         });
     </script>
     <body>
@@ -55,8 +61,8 @@
                 <p>Click the button to fade in and out a hidden image</p>
                 <img id="imgFadeInOut" src="./hiddenImage.webp" alt="alt text">
             <h2>Before and After</h2>
-                <button id="buttonBefore">Append</button>
-                <button id="buttonAfter">Append</button>
+                <button id="buttonBefore">Add Before</button>
+                <button id="buttonAfter">Add After</button>
                 <p id="beforeOrAfter">Click the buttons to insert text before or after this paragraph!</p>
             <h2>Html</h2>
                 <button id="htmlButton">HTML</button>
@@ -66,7 +72,12 @@
                 <p>Click the button to change the 'src' attribute of the imgage!</p>
                 <img id="imgSrcAttr" src="./dwarf-intro.png" alt="alt text">
             <h2>Val</h2>
+            <button id="valButton">Val</button> 
+            <input id="valText" type="text" value="some text">
+            <p>Click the button to display the value in the text area!</p>
             <h2>Text</h2>
+            <button id="textButton">Text</button> 
+            <p id="pText">Click the button to display the text of this page!</p>
         </main>
     </body>
 </html>
