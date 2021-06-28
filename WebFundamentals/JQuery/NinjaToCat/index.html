@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sweet Potato to Tomatillo</title>
+        <meta charset="UTF-8"> 
+        <meta name="author" content="Charlie Bowman">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <main>
+            <img src="./images/sweetPotato/sweetPotato1.png" alt="first puzzle piece" data-alt-src="./images/tomatillo/tomatillo1.png">
+            <img src="./images/sweetPotato/sweetPotato2.png" alt="second puzzle piece" data-alt-src="./images/tomatillo/tomatillo2.png">
+            <img src="./images/sweetPotato/sweetPotato3.png" alt="third puzzle piece" data-alt-src="./images/tomatillo/tomatillo3.png">
+            <img src="./images/sweetPotato/sweetPotato4.png" alt="fourth puzzle piece" data-alt-src="./images/tomatillo/tomatillo4.png">
+            <img src="./images/sweetPotato/sweetPotato5.png" alt="fifth puzzle piece" data-alt-src="./images/tomatillo/tomatillo5.png">
+        </main>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script text="text/javascript">
+        $(document).ready(function(){
+            $('img').click(function(){
+                var oldSrc = $(this).attr("src");
+                $(this).attr("src",$(this).attr("data-alt-src"));
+                $(this).attr("data-alt-src",oldSrc);
+
+            })
+        });
+    </script>
+</html>

@@ -1,0 +1,35 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    padding: 0.5em 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>button {
+    background-color: #009e0f;
+    color: white;
+    padding: 0.25em;
+    border-radius: 0.5em;
+    width: 15vw;
+    height: 5vh;
+    font-weight: bolder;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+img {
+    margin: 2em;
+    object-fit: cover;
+    height: 20vw;
+    width: 20vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

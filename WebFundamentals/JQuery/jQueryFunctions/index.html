@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Functions</title>
+        <meta charset="UTF-8"> 
+        <meta name="author" content="Charlie Bowman">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script text="text/javascript">
+        $(document).ready(function(){
+            $('#addClass').click(function(){
+                $('#pAddClass').addClass('redText');
+            });
+            $('#slideToggle').click(function(){
+                $('#imgSlideToggle').slideToggle('slow');
+            });
+            $('#appendParagraph').click(function(){
+                $('#pAppendParagraph').append('This is a new paragraph!')
+            });
+            $('#fadeToggle').click(function(){
+                $('#imgFadeInOut').fadeToggle("slow","linear");
+            });
+            $('#fadeIn').click(function(){
+                $('#imgFadeInOut').fadeIn("slow","linear");
+            });
+            $('#fadeOut').click(function(){
+                $('#imgFadeInOut').fadeOut("slow","linear");
+            });
+            $('#buttonBefore').click(function(){
+                $('#beforeOrAfter').before('<p>This paragraph is before!</p>');
+            });
+            $('#buttonAfter').click(function(){
+                $('#beforeOrAfter').after('<p>This paragraph is after!</p>');
+            });
+            $('#htmlButton').click(function(){
+                $('#htmlParagraph').html('<p>NEW TEXT!</p>');
+            });
+            $('#srcAttr').click(function(){
+                $('#imgSrcAttr').attr("src","./hiddenImage.webp");
+            });
+            $('#valButton').click(function(){
+                $('#valText').after('<p>'+$('#valText').val()+'</p>');
+            });
+            $('#textButton').click(function(){
+                $('#pText').after('<p>'+$('main').text()+'</p>');
+            });
+            $('#buttonHide').click(function(){
+                $('#hideAndShow').hide();
+            });
+            $('#buttonShow').click(function(){
+                $('#hideAndShow').show();
+            });
+            $('#slideDown').click(function(){
+                $('#slideUpDown').slideDown();
+            });
+            $('#slideUp').click(function(){
+                $('#slideUpDown').slideUp();
+            });
+        });
+    </script>
+    <body>
+        <header>
+            <h1>jQuery Functions</h1>
+        </header>
+        <main>
+            <h2>Hide and Show</h2>
+                <button id="buttonHide">Hide</button>
+                <button id="buttonShow">Show</button>
+                <p id="hideAndShow">Click the buttons to hide or show this paragraph!</p>
+            <h2>Slide Up and Down</h2>
+                <button id="slideDown">Slide Down</button>
+                <button id="slideUp">Slide Up</button>
+                <p>Click the buttons to slide up or down this image!</p>
+                <img id="slideUpDown" src="./dwarf-intro.png" alt="alt text">
+            <h2>AddClass</h2>
+                <button id="addClass">AddClass</button>
+                <p id="pAddClass">Click the button to add class 'red' to this paragraph</p>
+            <h2>Slidetoggle</h2>
+                <button id="slideToggle">Slidetoggle</button>
+                <p>Click the button to slidetoggle a hidden image</p>
+                <img id="imgSlideToggle" src="./hiddenImage.webp" alt="alt text">
+            <h2>Append</h2>
+                <button id="appendParagraph">Append</button>
+                <p id="pAppendParagraph">Click the button to append a new paragraph!</p>
+            <h2>Fade Out and In</h2>
+                <button id="fadeToggle">Fade Toggle</button>
+                <button id="fadeIn">Fade In</button>
+                <button id="fadeOut">Fade Out</button>
+                <p>Click the buttons to fade in and out a hidden image</p>
+                <img id="imgFadeInOut" src="./hiddenImage.webp" alt="alt text">
+            <h2>Before and After</h2>
+                <button id="buttonBefore">Add Before</button>
+                <button id="buttonAfter">Add After</button>
+                <p id="beforeOrAfter">Click the buttons to insert text before or after this paragraph!</p>
+            <h2>Html</h2>
+                <button id="htmlButton">HTML</button>
+                <p id="htmlParagraph">Click the button to replace the html of this paragraph with 'NEW TEXT'</p>
+            <h2>Attr</h2>
+                <button id="srcAttr">Attr</button>
+                <p>Click the button to change the 'src' attribute of the imgage!</p>
+                <img id="imgSrcAttr" src="./dwarf-intro.png" alt="alt text">
+            <h2>Val</h2>
+            <button id="valButton">Val</button> 
+            <input id="valText" type="text" value="some text">
+            <p>Click the button to display the value in the text area!</p>
+            <h2>Text</h2>
+            <button id="textButton">Text</button> 
+            <p id="pText">Click the button to display the text of this page!</p>
+        </main>
+    </body>
+</html>
