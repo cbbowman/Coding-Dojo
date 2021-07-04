@@ -1,0 +1,16 @@
+PS C:\Users\Mark Pugner\projects\Coding-Dojo\Python_Stack> tree
+Folder PATH listing
+Volume serial number is 32D9-57B5
+C:.
+├───Django
+│   ├───django_fullstack
+│   ├───django_fundamentals
+│   └───django_orm
+├───Flask
+├───MyEnvironments
+├───Python_Track
+│   └───Intro_and_Setup
+└───_python
+    ├───OOP
+    └───python_fundamentals
+PS C:\Users\Mark Pugner\projects\Coding-Dojo\Python_Stack>
