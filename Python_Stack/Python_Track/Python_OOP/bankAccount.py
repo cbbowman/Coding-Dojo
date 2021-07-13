@@ -19,4 +19,14 @@ class BankAccount:
 	def yield_interest(self):
 		# increases the account balance by the current balance * the interest rate (as long as the balance is positive)
 		if self.balance>0:
-			self.balance*=(1+self.int_rate)
+			self.balance=round(self.balance*(1+self.int_rate), 2)
+
+myAccount = BankAccount(0.17,100000)
+
+myAccount.display_account_info()
+myAccount.deposit(73)
+myAccount.display_account_info()
+myAccount.withdraw(13)
+myAccount.display_account_info()
+myAccount.yield_interest()
+myAccount.display_account_info()
