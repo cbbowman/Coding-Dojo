@@ -51,3 +51,9 @@ class User:
         print(f"User: {self.name}")
         print(f"Balance: {self.account.balance}")
 
+user1 = User("Mark", "mark@email.com")
+user2 = User("Joe", "joe@email.com")
+user3 = User("Jack", "jack@email.com")
+
+user1.account.deposit(73).deposit(73).deposit(73).withdraw(13).yield_interest().display_account_info()
+user2.account.deposit(73).deposit(73).withdraw(73).withdraw(73).withdraw(73).withdraw(13).yield_interest().display_account_info()
