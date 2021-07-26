@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-wideth, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Survey Result</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">   
+	</head>
+	<body>
+		<div class="container">
+			<div id="submission">
+				<h1>Submitted Info</h1>
+				<div class="item">
+					<p>Name: </p>
+					<p>{{request.session.name}}</p>
+				</div>
+				<div class="item">
+					<p>Dojo Location: </p>
+					<p>{{request.session.location}}</p>
+				</div>
+				<div class="item">
+					<p>Favorite Language: </p>
+					<p>{{request.session.favLang}}</p>
+				</div>
+				<div class="item">
+					<p>Comment: </p>
+					<p>{{request.session.comment}}</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
