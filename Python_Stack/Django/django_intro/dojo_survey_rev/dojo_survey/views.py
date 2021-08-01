@@ -1,9 +1,7 @@
 from django.shortcuts import redirect, render
     
 def index(request):
-    context = {
-    }
-    return render(request,'index.html', context)
+    return render(request,'index.html')
 
 def submit(request):
 	request.session['name']=request.POST['name']
@@ -13,8 +11,6 @@ def submit(request):
 	return redirect('/confirmation')
 
 def confirmation(request):
-    context = {
-    }
     return render(request,'confirmation.html')
 
 # def result(request):

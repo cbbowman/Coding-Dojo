@@ -42,40 +42,72 @@ table {
 	border-spacing: 0;
 }
 
-.container {
-	background-color: #564787 ;
-	color: #101935;
+#score_bar {
+	background-color: #585B56;
+	color: #E76B74;
+	font-weight: bolder;
+	font-size: x-large;
+	padding: 1em;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#gold {
+	border-style: solid;
+	border-width: medium;
+	width: 25vw;
+	align-content: right;
+	margin: 1em;
+	padding: 1em;
+}
+
+#locations {
+	background-color: #D7AF70;
+	padding: 2em;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.place {
+	background-color: #585B56;
+	height: 20vh;
+	width: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 1em;
+	color: #E76B74;
+}
+
+.placeName {
 	font-size: xx-large;
 	font-weight: bolder;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	padding: 5vh;
 }
 
-#survey {
+.placeDescription {
+	font-size: large;
+	font-weight: bold;
+}
+
+#activities {
+	padding: 1em;
+	font-size: large;
+	background-color: #937D64;
+	color: #EA526F;
 	display: flex;
-	flex-direction: column;
-	padding: 5vh;
-	background-color: #F2FDFF;
+	height: auto;
+}
+
+.title {
+	font-size: x-large;
+	font-weight: bolder;
+}
+
+#list {
+	background-color: white;
+	height: 15vh;
 	width: 50vw;
-	height: min-content;
-	border-radius: 5vh;
-}
-
-#submission {
-	display: flex;
-	flex-direction: column;
-	padding: 5vh;
-	background-color: #F2FDFF;
-	width: 50vw;
-	height: min-content;
-	border-radius: 5vh;
-}
-
-.item {
-	display: flex;
-	justify-content: space-between;
-
-	margin: 2vh;
+	margin: 1em;
 }

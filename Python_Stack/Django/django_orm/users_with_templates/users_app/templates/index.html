@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Users with Templates</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id='container'>
+		<div id="allTheUsers" class="container">
+			<h1>All the Users</h1>
+			<table class='table'>
+				<tr>
+					<th scope='col'>ID</th>
+					<th scope='col'>Name</th>
+					<th scope='col'>Email</th>
+					<th scope='col'>Age</th>
+				</tr>
+				{% for user in all_the_users %}
+				<tr>
+					<td>{{user.id}}</td>
+					<td>{{user.first_name}} {{user.last_name}}</td>
+					<td>{{user.email_address}}</td>
+					<td>{{user.age}}</td>
+				</tr>
+			{% endfor %}
+			</table>
+		</div>
+		<div id='newUserForm' class="container">
+			<h2>Add a User</h2>
+			<form action="/submit" method="POST" class=mb-3>
+				{% csrf_token %}
+				<div>
+					<label for="first_name" class='form-label'>First Name:</label>
+					<input class= 'form-control form-control-lg' type="text" id="first_name" name="first_name">
+				</div>
+				<div>
+					<label class='form-label' for="last_name">Last Name:</label>
+					<input class= 'form-control form-control-lg' type="text" id="last_name" name="last_name">
+				</div>
+				<div>
+					<label class='form-label' for="email_address">Email:</label>
+					<input class= 'form-control form-control-lg' type="text" id="email_address" name="email_address">
+				</div>
+				<div>
+					<label class='form-label' for="age">Age:</label>
+					<input class= 'form-control form-control-lg' type="text" id="age" name="age">
+				</div>
+				<div>
+					<form action="/submit" method="POST">
+						<input type='submit' value='Submit'> 
+					</form>
+
+				</div>
+		</div>
+	</div>
+</body>
+</html>
