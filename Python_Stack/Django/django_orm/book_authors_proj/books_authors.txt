@@ -1,0 +1,91 @@
+python .\manage.py shell
+
+>>> from books_authors_app.models import *
+>>> Book.objects.create(title="C Sharp")             
+<Book: Book object (1)>
+>>> Book.objects.create(title="Java")    
+<Book: Book object (2)>
+>>> Book.objects.create(title="Python") 
+<Book: Book object (3)>
+>>> Book.objects.create(title="PHP")    
+<Book: Book object (4)>
+>>> Book.objects.create(title="Ruby") 
+<Book: Book object (5)>
+>>> Author.objects.create(first_name="Jane", last_name="Austen") 
+<Author: Author object (1)>
+>>> Author.objects.create(first_name="Emily", last_name="Dickinson") 
+<Author: Author object (2)>
+>>> Author.objects.create(first_name="Fyodor", last_name="Dostoevsky")  
+<Author: Author object (3)>
+>>> Author.objects.create(first_name="William", last_name="Shakespeare") 
+<Author: Author object (4)>
+>>> Author.objects.create(first_name="Lau", last_name="Tzu")             
+<Author: Author object (5)>
+>>> exit()
+(djangoPy3Env) PS C:\Users\Mark Pugner\projects\Coding-Dojo\Python_Stack\Django\django_orm\book_authors_proj> python manage.py makemigrations
+You are trying to add a non-nullable field 'notes' to author without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+Type 'exit' to exit this prompt
+>>> ""
+Migrations for 'books_authors_app':
+  books_authors_app\migrations\0002_author_notes.py
+    - Add field notes to author
+(djangoPy3Env) PS C:\Users\Mark Pugner\projects\Coding-Dojo\Python_Stack\Django\django_orm\book_authors_proj> python manage.py migrate
+Operations to perform:
+  Apply all migrations: auth, books_authors_app, contenttypes, sessions
+Running migrations:
+  Applying books_authors_app.0002_author_notes... OK
+(djangoPy3Env) PS C:\Users\Mark Pugner\projects\Coding-Dojo\Python_Stack\Django\django_orm\book_authors_proj> python .\manage.py shell
+Python 3.6.4 (v3.6.4:d48eceb, Dec 19 2017, 06:54:40) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from books_authors_app.models import *                               
+
+>>> book_to_update = Book.objects.get(title="C Sharp") 
+>>> book_to_update.title="C#" 
+>>> book_to_update.save()
+
+>>> fourth_author = Author.objects.get(id=4) 
+>>> fourth_author.first_name = "Bill"
+
+>>> first_book = Book.objects.get(id=1) 
+>>> second_book = Book.objects.get(id=2) 
+>>> first_author = Author.objects.get(id=1) 
+>>> first_author.books.add(first_book) 
+>>> first_author.books.add(second_book) 
+
+>>> second_author = Author.objects.get(id=2) 
+>>> third_book = Book.objects.get(id=3) 
+>>> second_author.books.add(first_book)
+>>> second_author.books.add(second_book) 
+>>> second_author.books.add(third_book)  
+
+>>> fourth_book = Book.objects.get(id=4)
+>>> third_author = Author.objects.get(id=3)
+>>> third_author.books.add(first_book) 
+>>> third_author.books.add(second_book) 
+>>> third_author.books.add(third_book)  
+>>> third_author.books.add(fourth_book) 
+
+>>> fourth_author = Author.objects.get(id=4)
+>>> fifth_book = Book.objects.get(id=5)         
+>>> fourth_author.books.add(first_book) 
+>>> fourth_author.books.add(second_book) 
+>>> fourth_author.books.add(third_book)  
+>>> fourth_author.books.add(fourth_book) 
+>>> fourth_author.books.add(fifth_book) 
+
+>>> third_book.authors.all()
+
+>>> third_book.authors.remove(first_author)
+
+>>> fifth_author = Author.objects.get(id=5)  
+>>> fifth_author.books.add(second_book)
+
+>>> third_author.books.all()
+
+>>> fifth_book.authors.all()
