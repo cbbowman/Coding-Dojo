@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}		
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>All Shows</title>
+</head>
+<body>
+	<div class="container">
+		<h1>All Shows</h1>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Title</th>
+				<th scope="col">Network</th>
+				<th scope="col">Release Date</th>
+				<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for show in all_the_shows %}
+				<tr>
+				<td>{{show.id}}</td>
+				<td>{{show.title}}</td>
+				<td>{{show.network}}</td>
+				<td>{{show.release_date}}</td>
+				<td><a href="/shows/{{show.id}}">Show</a> | <a href="/shows/{{show.id}}/edit">Edit</a> | <form action="/shows/{{show.id}}/destroy" method="POST">
+					{% csrf_token %}
+					<button type="submit" class="btn btn-xs btn-danger">Delete</button>
+				</form></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<a href="/shows/new">Add a New Show</a>
+		
+
+	</div>
+</body>
+</html>

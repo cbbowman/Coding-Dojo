@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Edit {{title}}</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Edit {{title}}</h1>
+		<a href="/shows">Go Back</a>
+		<div>
+			<form action="/shows/{{showid}}/update" method="POST">
+				{% csrf_token %}
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" name="title" value="{{title}}">
+				</div>
+				<div class="form-group">
+					<label for="Network">Network</label>
+					<input type="text" name="network" value="{{network}}">
+				</div>
+				<div class="form-group">
+					<label for="release">Release Date</label>
+					<input type="date" name="release" value="{{release}}">
+				</div>
+				<div class="form-group">
+					<label for="description">Description</label>
+					<textarea class="form-control" rows="3" name="description">{{description}} </textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Update</button>
+			</form>
+			<a href="/shows/{{showid}}"></a>
+		</div>
+	</div>
+</body>
+</html>
