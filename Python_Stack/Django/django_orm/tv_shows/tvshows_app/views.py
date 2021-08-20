@@ -1,6 +1,8 @@
 from typing import ContextManager
-from django.shortcuts import redirect, render 
+from django.shortcuts import redirect, render, HttpResponse
 from .models import Show
+from django.contrib import messages
+
     
 def index(request):
 	return redirect("/shows")
@@ -12,8 +14,14 @@ def add_show(request):
 	if request.method != "POST":
 		return redirect("/shows/new")
 	# create the show.
-	Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release'], description=request.POST['description'])
-	return redirect("/shows")
+	errors = Show.objects.basic_validator(request.POST)
+	if len(errors) > 0:
+		for key, value in errors.items():
+			messages.error(request, value)
+		return redirect('/shows/new')
+	else:
+		Show.objects.create(title=request.POST['title'], network=request.POST['network'], release_date=request.POST['release'], description=request.POST['description'])
+		return redirect("/shows")
 
 def show(request, show_id):
 	this_show = Show.objects.get(id=show_id)
@@ -48,13 +56,19 @@ def update_show(request, show_id):
 	if request.method != "POST":
 		return render(request, "shows.html")
 	# update the show
-	this_show = Show.objects.get(id=show_id)
-	this_show.title=request.POST['title']
-	this_show.network=request.POST['network']
-	this_show.release_date=request.POST['release']
-	this_show.description=request.POST['description']
-	this_show.save()
-	return redirect("/shows")
+	errors = Show.objects.basic_validator(request.POST)
+	if len(errors) > 0:
+		for key, value in errors.items():
+			messages.error(request, value)
+		return redirect('/shows/'+str(show_id)+'/edit')
+	else:
+		this_show = Show.objects.get(id=show_id)
+		this_show.title=request.POST['title']
+		this_show.network=request.POST['network']
+		this_show.release_date=request.POST['release']
+		this_show.description=request.POST['description']
+		this_show.save()
+		return redirect("/shows")
 
 def delete_show(request, show_id):
 	if request.method != "POST":
