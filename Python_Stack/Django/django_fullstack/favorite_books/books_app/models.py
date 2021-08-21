@@ -44,7 +44,7 @@ class UserManager(models.Manager):
 	def add_book_validator(self, postData):
 		errors = {}
 		if not len(postData['title']):
-			errors["email_blank"] = "Title must not be blank"
+			errors["title"] = "Title must not be blank"
 		if len(postData['description']) < 5:
 			errors["description"] = "Description should be at least 5 characters"
 		return errors
