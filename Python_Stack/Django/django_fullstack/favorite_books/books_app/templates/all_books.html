@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Favorite Books</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			{% if messages %}
+			<ul class="messages">
+				{% for message in messages %}
+					<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<h1>Welcome, {{user.first}}!</h1>
+			</div>
+			<div class="col-sm-6">
+				<form action="/logout" method="post">
+					{% csrf_token %}
+					<input type="hidden">
+					<button type="submit" class="btn btn-danger">Logout</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Add a Favorite Book</h2>
+				<form action="/add" method="POST">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="title">Title</label>
+						<input type="text" name="title">
+					</div>
+					<div class="form-group">
+						<label for="description">Description</label>
+						<input type="text" name="description">
+					</div>
+					<button type="submit" class="btn btn-primary">Add</button>
+				</form>
+			</div>
+			<div class="col-md-6">
+				<h2>All Books</h2>
+				{% for book in all_books %}
+					<a href="books/{{book.id}}">{{book.title}}</a>
+					<p>(added by {{book.added_by.first}} {{book.added_by.last}})</p>
+					{% if book in all_favorites %}
+						<p><em>this is one of your favorites</em></p>
+						<form action="books/{{book.id}}/favorite" method="post">
+							{% csrf_token %}
+							<input type="hidden">
+							<button type="submit" class="btn btn-primary">Un-Favorite</button>
+						</form>
+					{% else %}
+						<form action="books/{{book.id}}/favorite" method="post">
+							{% csrf_token %}
+							<input type="hidden">
+							<button type="submit" class="btn btn-primary">Add to Favorites</button>
+						</form>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 from typing import ContextManager
 from django.shortcuts import redirect, render, HttpResponse
-from .models import User
+from .models import User, Book
 from django.contrib import messages
 import bcrypt
 
@@ -19,7 +19,8 @@ def new(request):
 		return redirect('/')
 	else:
 		context = {
-			"first": request.POST['first']
+			"first": request.POST['first'],
+			"all_books": Book.objects.all()
 		}
 		password = request.POST['pass']
 		pw_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
