@@ -30,7 +30,6 @@ Value * Position
     [0,3,10,3,8,20]
 
 */
-
 testArr = [6,3,5,1,2,4];
 for(i=0; i<testArr.length; i++){
     testArr[i]=i*testArr[i];
